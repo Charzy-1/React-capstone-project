@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_KEY = 'your_api_key';  // Replace this with your actual Financial Modelling Prep API key
+const API_KEY = '01Z7c5B3F7AL2nar8u2qIMpy8vPtCmS2';  
 const BASE_URL = 'https://financialmodelingprep.com/api/v3';
 
 export const getMetrics = async (type) => {
