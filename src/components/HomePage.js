@@ -84,16 +84,19 @@ const HomePage = () => {
   return (
     <div className="home-wrapper">
       <div className="hero-section">
-        <h1 className="hero-title">Your best Crypto's market tracker option</h1>
-        <input 
+        <div className='herosection-text'>
+          <h1 className="hero-title">Your best Crypto's market tracker option</h1>
+          <p>Check and discover more than +8000 coins with their respective statistics</p>
+        </div>
+        <img src="/images/BTC-removebg-preview.png" alt="Bitcoin" />
+      </div>
+      <input 
           type="text" 
           className="search-bar" 
           placeholder="Search by coin name"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
-      </div>
-
       {loading && <p>Loading...</p>}
       {error && <p>{error}</p>}
 
