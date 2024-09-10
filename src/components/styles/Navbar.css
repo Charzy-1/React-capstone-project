@@ -1,0 +1,53 @@
+.navbar {
+    padding: 1rem 3rem !important;
+  
+    /* background-color: #f8f9fa;  */
+  }
+  
+  .navbar .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar .logo-image {
+    width: 40px;
+    height: auto;
+    margin-right: 40px;
+  }
+  
+  .navbar .logo-text {
+    font-size: 1.5em; /* Adjust text size */
+    font-weight: bold; /* Optional: Make text bold */
+  }
+  
+  /* Style for nav-links */
+  .navbar .nav-links {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar .nav-link {
+    margin: 0 10px;
+    text-decoration: none !important;
+    color: blue !important;
+  }
+  
+  .navbar .nav-link:hover {
+    text-decoration: underline !important;
+  }
+  
+  /* Style for the divider */
+  .navbar .divider {
+    margin: 0 10px;
+  }
+  
+  nav a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: black;
+  }
+  
+  .active-link {
+    text-decoration: underline;
+    color: blue;
+  }
