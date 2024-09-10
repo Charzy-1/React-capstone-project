@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchMetrics } from '../redux/actions';
-import './CoinPage.css';
+import './styles/CoinPage.css'; 
 
 const CoinPage = () => {
   const { coin } = useParams();

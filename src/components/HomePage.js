@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchMetrics } from '../redux/actions';
 import { Link } from 'react-router-dom';
-import './HomePage.css';
+import './styles/HomePage.css'; 
 
 const HomePage = () => {
   const dispatch = useDispatch();
