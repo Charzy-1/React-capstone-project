@@ -1,4 +1,3 @@
-// /src/components/HomePage.js
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchMetrics } from '../redux/actions';
@@ -13,7 +12,6 @@ const HomePage = () => {
   useEffect(() => {
     dispatch(fetchMetrics());
   }, [dispatch]);
-  
 
   const filteredCoins = Array.isArray(metrics)
     ? metrics.filter(coin => 
