@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { thunk } from 'redux-thunk';
-import rootReducer from './reducers';  // Ensure this import is correct
+import metricsReducer from './reducers';  // Correct path to the single reducer
 
 const store = configureStore({
-  reducer: rootReducer,
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(thunk),
+  reducer: {
+    metrics: metricsReducer,  // Wrap your single reducer in an object
+  },
 });
 
 export default store;

@@ -1,31 +1,38 @@
-import React, { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchMetrics } from '../redux/actions';
-import './styles/CoinPage.css'; 
+import React, { useState, useEffect } from 'react';
+import { getCryptoQuote } from '../api';
 
-const CoinPage = () => {
-  const { coin } = useParams();
-  const dispatch = useDispatch();
-  const { metrics, loading, error } = useSelector(state => state.metrics);
+const CoinPage = ({ match }) => {
+  const [quote, setQuote] = useState(null);
+  const [error, setError] = useState(null);
+  const symbol = match.params.symbol; // Assuming you're passing the coin symbol via React Router
 
   useEffect(() => {
-    dispatch(fetchMetrics(coin));
-  }, [dispatch, coin]);
+  const fetchQuote = async () => {
+    try {
+      const data = await getCryptoQuote(symbol);  // Fetching cryptocurrency quote
+      console.log('API Data:', data);  // Check API response in the console
+      setQuote(data);
+    } catch (error) {
+      setError('Error fetching quote');
+    }
+  };
 
-  const coinMetric = metrics.find((metric) => metric.symbol === coin);
+  if (symbol) {
+    fetchQuote();
+  }
+}, [symbol]);
 
   return (
-    <div className="coin-page-wrapper">
-      {loading ? <p>Loading...</p> : (
-        <div className="coin-details">
-          <h1 className="coin-title">{coinMetric?.name}</h1>
-          <p className="coin-price">Price: {coinMetric?.price}</p>
-          <p className="coin-stat">Market Cap: {coinMetric?.marketCap}</p>
-          <p className="coin-stat">Volume: {coinMetric?.volume}</p>
-        </div>
-      )}
+    <div>
       {error && <p>{error}</p>}
+      {quote ? (
+        <div>
+          <h1>{quote[0]?.symbol}</h1>  {/* Display coin symbol */}
+          <p>Price: {quote[0]?.price}</p>  {/* Display coin price */}
+        </div>
+      ) : (
+        <p>Loading...</p>
+      )}
     </div>
   );
 };

@@ -5,7 +5,6 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 8rem;
-  background-color: #241b45; /* Dark purple background */
   color: #fff;
 }
 
@@ -22,8 +21,8 @@
 }
 
 .logo-image {
-  width: 50px; /* Adjust the size if needed */
-  margin-right: 0.5rem; /* Space between logo and text */
+  width: 80px; 
+  margin-right: 0.5rem; 
 }
 
 .logo-text {

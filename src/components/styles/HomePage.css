@@ -17,7 +17,7 @@
     color: white;
     text-align: left;
     padding: 2rem;
-    margin: 2rem;
+    margin: 0 2rem;
     gap: 30px;
   }
   
@@ -36,7 +36,7 @@
     padding: 0.5rem;
     border-radius: 8px;
     border: none;
-    margin-top: 1rem;
+    margin-top: 2rem;
     width: 300px;
     background-color: #1e1e2f;
     color: white;

@@ -1,29 +1,13 @@
-/*import { getMetrics } from '../services/api';
+import { getCryptoMetrics } from '../api';
 
-export const fetchMetrics = (type) => async (dispatch) => {
-  dispatch({ type: 'FETCH_METRICS_REQUEST' });
+export const fetchMetrics = () => async (dispatch) => {
+  dispatch({ type: 'FETCH_METRICS_REQUEST' });  // Add request action
   try {
-    const data = await getMetrics(type);
-    dispatch({ type: 'FETCH_METRICS_SUCCESS', payload: data });
+    const metrics = await getCryptoMetrics();
+    console.log('Fetched metrics:', metrics);  // Log the fetched metrics
+    dispatch({ type: 'FETCH_METRICS_SUCCESS', payload: metrics });
   } catch (error) {
+    console.error('Error fetching metrics:', error);
     dispatch({ type: 'FETCH_METRICS_FAILURE', payload: error.message });
-  }
-};*/
-
-export const FETCH_METRICS_REQUEST = 'FETCH_METRICS_REQUEST';
-export const FETCH_METRICS_SUCCESS = 'FETCH_METRICS_SUCCESS';
-export const FETCH_METRICS_FAILURE = 'FETCH_METRICS_FAILURE';
-
-export const fetchMetricsRequest = () => ({ type: FETCH_METRICS_REQUEST });
-export const fetchMetricsSuccess = (metrics) => ({ type: FETCH_METRICS_SUCCESS, payload: metrics });
-export const fetchMetricsFailure = (error) => ({ type: FETCH_METRICS_FAILURE, payload: error });
-
-export const fetchMetrics = (coin) => async (dispatch) => {
-  dispatch(fetchMetricsRequest());
-  try {
-    const data = await fetchCryptoMetrics(coin);
-    dispatch(fetchMetricsSuccess(data));
-  } catch (error) {
-    dispatch(fetchMetricsFailure(error.message));
   }
 };
