@@ -19,6 +19,13 @@ const HomePage = () => {
       )
     : [];
 
+  const imageFilenames = ['coin1.jpg', 'Coin2.jpg', 'coin3.jpg'];
+
+  const getRandomImage = () => {
+    const randomIndex = Math.floor(Math.random() * imageFilenames.length);
+    return imageFilenames[randomIndex];
+  };
+
   return (
     <div className="home-wrapper">
       <div className="hero-section">
@@ -43,9 +50,22 @@ const HomePage = () => {
           filteredCoins.map((coin) => (
             <Link to={`/coin/${coin.symbol}`} key={coin.symbol}>
               <div className="coin-card">
-                <h2 className="coin-name">{coin.name}</h2>
-                <p className="coin-symbol">{coin.symbol}</p>
-                <p className="coin-price">{coin.price}</p>
+                <div className="coin-image">
+                  <img 
+                    src={`/images/coins/${getRandomImage()}`}  // Use the function to get a random image
+                    alt={`${coin.name} logo`} 
+                    onError={(e) => { 
+                      e.target.onerror = null; 
+                      e.target.src='/images/default-crypto-icon.png';  // Use a default image if the random image is missing
+                    }} 
+                  />
+                </div>
+                <div className="coin-info">
+                  <h2 className="coin-name">{coin.name}</h2>
+                  <p className="coin-symbol">{coin.symbol}</p>
+                  <p className="coin-rank">#{coin.rank}</p>
+                  <p className="coin-price">${parseFloat(coin.price_usd).toFixed(2)}</p>
+                </div>
               </div>
             </Link>
           ))

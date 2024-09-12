@@ -1,23 +1,10 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://financialmodelingprep.com/api/v3';
-const API_KEY = '01Z7c5B3F7AL2nar8u2qIMpy8vPtCmS2';  
-// Function to get cryptocurrency quotes (e.g., Bitcoin, Ethereum)
-export const getCryptoQuote = (symbol) => {
-  return axios.get(`${BASE_URL}/cryptocurrencies/${symbol}?apikey=${API_KEY}`)
-    .then(response => {
-      console.log('Crypto Quote Response:', response.data);  // Log the response for debugging
-      return response.data;
-    })
-    .catch(error => {
-      console.error('Error fetching crypto quote:', error);
-      throw error;
-    });
-};
+const BASE_URL = 'https://api.coinlore.net/api/tickers/?start=100&limit=100';
 
 // Function to get cryptocurrency metrics (list of cryptocurrencies)
 export const getCryptoMetrics = () => {
-  return axios.get(`${BASE_URL}/cryptocurrencies?apikey=${API_KEY}`)
+  return axios.get(BASE_URL)
     .then(response => {
       console.log('Crypto Metrics Response:', response.data);  // Log the response for debugging
       return response.data;
@@ -29,14 +16,31 @@ export const getCryptoMetrics = () => {
 };
 
 // Function to search for cryptocurrencies by name
-export const searchCryptocurrencies = (query) => {
-  return axios.get(`${BASE_URL}/search?query=${query}&apikey=${API_KEY}`)
-    .then(response => {
-      console.log('Search Response:', response.data);  // Log the response for debugging
-      return response.data;
-    })
-    .catch(error => {
-      console.error('Error searching cryptocurrency:', error);
-      throw error;
-    });
+// Note: Coinlore API doesn't support searching by name directly
+// We can filter the response manually for matching names
+export const searchCryptocurrencies = async (query) => {
+  try {
+    const response = await getCryptoMetrics();
+    const filtered = response.data.filter(crypto => 
+      crypto.name.toLowerCase().includes(query.toLowerCase())
+    );
+    console.log('Filtered Search Results:', filtered);  // Log the filtered search results
+    return filtered;
+  } catch (error) {
+    console.error('Error searching cryptocurrency:', error);
+    throw error;
+  }
+};
+
+// Function to get a cryptocurrency quote by symbol (Coinlore doesn't have direct symbol lookup)
+export const getCryptoQuote = async (symbol) => {
+  try {
+    const response = await getCryptoMetrics();
+    const foundCrypto = response.data.find(crypto => crypto.symbol === symbol.toUpperCase());
+    console.log('Crypto Quote:', foundCrypto);  // Log the found crypto quote
+    return foundCrypto;
+  } catch (error) {
+    console.error('Error fetching crypto quote:', error);
+    throw error;
+  }
 };
