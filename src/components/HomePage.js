@@ -44,7 +44,7 @@ const HomePage = () => {
       />
       {loading && <p>Loading...</p>}
       {error && <p>{error}</p>}
-
+      <p>Coins</p>
       <div className="coins-grid">
         {filteredCoins.length > 0 ? (
           filteredCoins.map((coin) => (

@@ -36,7 +36,7 @@
     padding: 0.5rem;
     border-radius: 8px;
     border: none;
-    margin-top: 2rem;
+    margin: 2rem;
     width: 300px;
     background-color: #1e1e2f;
     color: white;
@@ -45,11 +45,12 @@
   }
   
   .coins-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 20px;
-    justify-items: center;
-    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap onto the next line */
+    justify-content: space-between; /* Distribute space between the cards */
+    gap: 2rem; /* Add space between cards */
+    padding: 1rem; /* Padding around the grid */
+    margin: 1rem 6rem;
   }
   
   .coin-card {
@@ -57,10 +58,10 @@
     border-radius: 8px;
     padding: 15px;
     text-align: center;
-    width: 200px;
+    width: 300px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   }
-  
+
   .coin-card h2 {
     color: #f39c12;
   }
@@ -115,7 +116,7 @@
     height: 100%;
     object-fit: cover; /* Ensures the image covers the area without distortion */
   }
-  
+
   .coin-info {
     margin-top: 10px;
   }
