@@ -8,7 +8,7 @@ You can access the live version [here](#).
 
 ## Project screenshot.
 
-![screenshot](/public/images/Screenshot.jpegscreenshot.png)
+![screenshot](/public/images/Screenshot.jpeg)
 ## Video presentation
 
 You can access the video presentation of the project [here](https://www.loom.com/share/2615c8e2b5014d7f8013392afc47bfc0).
