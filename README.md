@@ -1,6 +1,6 @@
 # React capstone project - Metrics webapp
 
-> Single Page Application that fetch data from conillore crypto API, lists the metrics by coin name and displays additional information when clicked on a coin link.
+> Single Page Application that fetch data from coinllore crypto API, lists the metrics by coin name and displays additional information when clicked on a coin link.
 
 ## Live version
 
