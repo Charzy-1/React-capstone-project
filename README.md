@@ -11,7 +11,7 @@ You can access the live version [here](#).
 ![screenshot](/public/images/Screenshot.jpegscreenshot.png)
 ## Video presentation
 
-You can access the video presentation of the project [here](#).
+You can access the video presentation of the project [here](https://www.loom.com/share/2615c8e2b5014d7f8013392afc47bfc0).
 
 ## Built With
 
@@ -46,7 +46,7 @@ You can access the video presentation of the project [here](#).
 
 ## Author
 
-👤 **Ijay Abby**
+👤 **Charles Adikankwu**
 
 - GitHub: [@githubhandle](https://github.com/Charzy-1)
 - Twitter: [@twitterhandle](https://x.com/CharlyB124?t=DqI9VdevQ1kz7k3u2dOOtQ&s=08)
@@ -63,7 +63,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Microverse
+- Chill Academy
 - React, Redux and React Router documentation
 - Jest Documentation for Testing.
 - Credits to the original design idea by [Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio).
