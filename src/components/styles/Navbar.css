@@ -21,14 +21,14 @@
 }
 
 .logo-image {
-  width: 80px; 
-  margin-right: 0.5rem; 
+  width: 80px;
+  margin-right: 0.5rem;
 }
 
 .logo-text {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #ffffff;
+  color: #fff;
 }
 
 .navbar-right .nav-link {

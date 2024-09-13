@@ -6,9 +6,6 @@ const CoinPage = () => {
   const location = useLocation();
   const { image, coinData } = location.state || {}; // Destructure the state passed from HomePage
 
-  // Debugging step to check what data is received
-  console.log('Received state:', { image, coinData });
-
   if (!coinData) {
     return <p>Error: Coin data not available</p>;
   }
@@ -50,7 +47,6 @@ const CoinPage = () => {
         <div className="stats-grid">
           <div className="stat-item">
             <span>% Change (24h):</span>
-            {' '}
             <span>
               {coinData.percent_change_24h}
               %
@@ -58,7 +54,6 @@ const CoinPage = () => {
           </div>
           <div className="stat-item">
             <span>% Change (1h):</span>
-            {' '}
             <span>
               {coinData.percent_change_1h}
               %
@@ -66,7 +61,6 @@ const CoinPage = () => {
           </div>
           <div className="stat-item">
             <span>% Change (7d):</span>
-            {' '}
             <span>
               {coinData.percent_change_7d}
               %
@@ -74,17 +68,14 @@ const CoinPage = () => {
           </div>
           <div className="stat-item">
             <span>Market Cap $:</span>
-            {' '}
             <span>{coinData.market_cap_usd}</span>
           </div>
           <div className="stat-item">
             <span>Volume (24h):</span>
-            {' '}
             <span>{coinData.volume_24h_usd}</span>
           </div>
           <div className="stat-item">
             <span>Coin Supply:</span>
-            {' '}
             <span>{coinData.circulating_supply}</span>
           </div>
         </div>

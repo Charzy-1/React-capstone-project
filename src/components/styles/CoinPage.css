@@ -5,7 +5,7 @@
   align-items: center;
   padding: 20px;
   background-color: #1b0b33; /* Dark purple background */
-  color: #ffffff; /* White text */
+  color: #fff; /* White text */
   border-radius: 10px;
   max-width: 1000px;
   margin: 0 auto;
@@ -59,7 +59,7 @@
 
 .coin-stats h3 {
   font-size: 24px;
-  color: #ffffff;
+  color: #fff;
   text-align: center;
   margin-bottom: 20px;
 }
@@ -86,13 +86,13 @@
 .stat-item span:first-child {
   display: block;
   font-size: 16px;
-  color: #cccccc; /* Lighter text for labels */
+  color: #ccc; /* Lighter text for labels */
 }
 
 .stat-item span:last-child {
   display: block;
   font-size: 20px;
-  color: #ffffff; /* White text for the value */
+  color: #fff; /* White text for the value */
   font-weight: bold;
 }
 
@@ -101,11 +101,11 @@
   .stats-grid {
     grid-template-columns: 1fr; /* Single column layout on smaller screens */
   }
-  
+
   .coin-image-container {
     width: 100%; /* Make image full width on smaller screens */
   }
-  
+
   .coin-name {
     font-size: 22px;
   }
