@@ -12,7 +12,7 @@ test('renders crypto data on HomePage', () => {
   render(
     <Provider store={store}>
       <HomePage />
-    </Provider>
+    </Provider>,
   );
 
   const linkElement = screen.getByText(/Bitcoin/i);
