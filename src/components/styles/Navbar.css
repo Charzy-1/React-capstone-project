@@ -1,0 +1,54 @@
+/* styles/Navbar.css */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 8rem;
+  color: #fff;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.home-link {
+  display: flex;
+  align-items: center; /* This will vertically align the logo and text */
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo-image {
+  width: 80px;
+  margin-right: 0.5rem;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.navbar-right .nav-link {
+  position: relative;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+.navbar-right .nav-link:hover {
+  color: #b490e5; /* Change text color on hover */
+}
+
+@media (max-width: 768px) {
+  .navbar-right .nav-link {
+    display: none;
+  }
+
+  .navbar {
+    padding: 1rem;
+  }
+}

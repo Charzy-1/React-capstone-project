@@ -1,0 +1,116 @@
+/* General styling for the coin page container */
+.coin-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #1b0b33; /* Dark purple background */
+  color: #fff; /* White text */
+  border-radius: 10px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Styling for the magnified image */
+.coin-image-container {
+  width: 400px;
+  height: auto;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.coin-image-magnified {
+  width: 100%; /* Ensure the image is responsive */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Main coin information (name, symbol, price) */
+.coin-main-info {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.coin-name {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #e1b12c; /* Gold-ish color for the name */
+}
+
+.coin-price {
+  font-size: 30px;
+  color: #2ecc71; /* Green color for the price */
+  margin-bottom: 5px;
+}
+
+.coin-symbol {
+  font-size: 18px;
+  color: #8e8e8e; /* Grey for the symbol */
+}
+
+/* Styling for the stats section */
+.coin-stats {
+  width: 100%;
+  max-width: 900px;
+  margin-top: 20px;
+}
+
+.coin-stats h3 {
+  font-size: 24px;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Grid layout for stats */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  gap: 20px;
+  background-color: #240a3e; /* Slightly darker background for the grid */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Individual stat box styling */
+.stat-item {
+  background-color: #350d57; /* Darker purple for the stat box */
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.stat-item span:first-child {
+  display: block;
+  font-size: 16px;
+  color: #ccc; /* Lighter text for labels */
+}
+
+.stat-item span:last-child {
+  display: block;
+  font-size: 20px;
+  color: #fff; /* White text for the value */
+  font-weight: bold;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr; /* Single column layout on smaller screens */
+  }
+
+  .coin-image-container {
+    width: 100%; /* Make image full width on smaller screens */
+  }
+
+  .coin-name {
+    font-size: 22px;
+  }
+
+  .coin-price {
+    font-size: 24px;
+  }
+}
