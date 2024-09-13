@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchMetrics } from '../redux/actions';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './styles/HomePage.css';
 
 const HomePage = () => {
   const dispatch = useDispatch();
   const { metrics, loading, error } = useSelector(state => state.metrics || {});
   const [search, setSearch] = useState('');
+  const navigate = useNavigate(); // Hook to navigate programmatically
 
   useEffect(() => {
     dispatch(fetchMetrics());
@@ -19,11 +20,16 @@ const HomePage = () => {
       )
     : [];
 
-  const imageFilenames = ['coin1.jpg', 'Coin2.jpg', 'coin3.jpg'];
+  const imageFilenames = ['coin1.jpg', 'coin2.jpg', 'coin3.jpg'];
 
   const getRandomImage = () => {
     const randomIndex = Math.floor(Math.random() * imageFilenames.length);
     return imageFilenames[randomIndex];
+  };
+
+  const handleCardClick = (coin) => {
+    const randomImage = getRandomImage();
+    navigate(`/coin/${coin.symbol}`, { state: { image: randomImage, coinData: coin } });
   };
 
   return (
@@ -47,12 +53,12 @@ const HomePage = () => {
       <p>Coins</p>
       <div className="coins-grid">
         {filteredCoins.length > 0 ? (
-          filteredCoins.map((coin) => (
-            <Link to={`/coin/${coin.symbol}`} key={coin.symbol}>
-              <div className="coin-card">
+          filteredCoins.map((coin) => {
+            return (
+              <div className="coin-card" key={coin.symbol} onClick={() => handleCardClick(coin)}>
                 <div className="coin-image">
                   <img 
-                    src={`/images/coins/${getRandomImage()}`}  // Use the function to get a random image
+                    src={`/images/coins/${getRandomImage()}`}  // Use the random image
                     alt={`${coin.name} logo`} 
                     onError={(e) => { 
                       e.target.onerror = null; 
@@ -67,8 +73,8 @@ const HomePage = () => {
                   <p className="coin-price">${parseFloat(coin.price_usd).toFixed(2)}</p>
                 </div>
               </div>
-            </Link>
-          ))
+            );
+          })
         ) : (
           <p>No coins found.</p>
         )}
