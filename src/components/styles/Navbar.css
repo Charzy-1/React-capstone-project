@@ -32,6 +32,7 @@
 }
 
 .navbar-right .nav-link {
+  position: relative;
   font-size: 1.2rem;
   text-decoration: none;
   color: #fff;
@@ -39,7 +40,7 @@
 }
 
 .navbar-right .nav-link:hover {
-  color: #b490e5; /* Hover effect */
+  color: #b490e5; /* Change text color on hover */
 }
 
 @media (max-width: 768px) {

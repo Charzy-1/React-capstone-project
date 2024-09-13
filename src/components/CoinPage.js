@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import './styles/CoinPage.css';  // Assuming you have a CSS file for styling
+import './styles/CoinPage.css';  
 
 const CoinPage = () => {
   const location = useLocation();

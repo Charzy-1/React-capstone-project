@@ -12,7 +12,7 @@ function Navbar() {
         </Link>
       </div>
       <div className="navbar-right">
-        <Link to="/coinpage" className="nav-link">Coins</Link>
+        <Link to="/" className="nav-link">Coins</Link>
       </div>
     </nav>
   );
