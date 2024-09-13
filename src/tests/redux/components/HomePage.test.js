@@ -1,7 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
-import HomePage from '../../components/HomePage';
+
+/* eslint-disable import/extensions */
+import HomePage from '../../components/HomePage.js';
+/* eslint-enable import/extensions */
 
 const mockStore = configureStore([]);
 const store = mockStore({

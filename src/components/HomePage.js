@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { fetchMetrics } from '../redux/actions';
+import fetchMetrics from '../redux/actions'; // Updated import for default export
 import './styles/HomePage.css';
 
 const HomePage = () => {

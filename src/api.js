@@ -16,6 +16,7 @@ export const getCryptoMetrics = () => axios.get(BASE_URL)
 // Function to search for cryptocurrencies by name
 // Note: Coinlore API doesn't support searching by name directly
 // We can filter the response manually for matching names
+/* eslint-disable max-len */
 export const searchCryptocurrencies = async (query) => {
   try {
     const response = await getCryptoMetrics();
@@ -27,6 +28,7 @@ export const searchCryptocurrencies = async (query) => {
     throw error;
   }
 };
+/* eslint-enable max-len */
 
 // Function to get a cryptocurrency quote by symbol (Coinlore doesn't have direct symbol lookup)
 export const getCryptoQuote = async (symbol) => {

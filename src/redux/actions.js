@@ -1,7 +1,7 @@
 import { getCryptoMetrics } from '../api';
 
 // Action to fetch cryptocurrency metrics
-export const fetchMetrics = () => async (dispatch) => {
+const fetchMetrics = () => async (dispatch) => {
   dispatch({ type: 'FETCH_METRICS_REQUEST' }); // Dispatch request action to set loading state
   try {
     const response = await getCryptoMetrics(); // Fetch the metrics
@@ -13,3 +13,5 @@ export const fetchMetrics = () => async (dispatch) => {
     dispatch({ type: 'FETCH_METRICS_FAILURE', payload: error.message }); // Dispatch failure action with error message
   }
 };
+
+export default fetchMetrics;
