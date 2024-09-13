@@ -41,3 +41,13 @@
 .navbar-right .nav-link:hover {
   color: #b490e5; /* Hover effect */
 }
+
+@media (max-width: 768px) {
+  .navbar-right .nav-link {
+    display: none;
+  }
+
+  .navbar {
+    padding: 1rem;
+  }
+}

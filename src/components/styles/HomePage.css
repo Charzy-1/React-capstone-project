@@ -11,6 +11,7 @@
     background-size: cover;
     background-position: right;
     height: 350px;
+    width: 80vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -125,5 +126,23 @@
   .coin-rank {
     font-size: 14px;
     color: #aaa;
+  }
+
+  @media (max-width: 768px) {
+    .hero-section {
+      height: 500px;
+      flex-direction: column;
+      padding: 2rem;
+    }
+
+    .hero-section img {
+      height: 200px;
+      box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.8); /* White shadow */
+    }
+
+    .hero-title {
+      margin-bottom: 2.5rem;
+    }
+    
   }
   

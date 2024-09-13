@@ -7,8 +7,8 @@ function Navbar() {
     <nav className="navbar">
       <div className="navbar-left">
         <Link to="/" className="home-link"> {/* Link to the homepage */}
-          <img src="/images/logo.png" alt="Mintok logo" className="logo-image" />
-          <span className="logo-text">LeoExchange</span>
+          <img src="/images/logo.png" alt="Leoexchange logo" className="logo-image" />
+          <span className="logo-text">Leo'sExchange</span>
         </Link>
       </div>
       <div className="navbar-right">
