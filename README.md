@@ -4,7 +4,7 @@
 
 ## Live version
 
-You can access the live version [here](#).
+You can access the live version [here](https://66e493a11d296b6c9784521d--leosex.netlify.app/).
 
 ## Project screenshot.
 
